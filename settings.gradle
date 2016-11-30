@@ -1,0 +1,2 @@
+include ':app', ':newLib'
+project(':newLib').projectDir = new File(settingsDir, '../LibraryProjects/newLib')

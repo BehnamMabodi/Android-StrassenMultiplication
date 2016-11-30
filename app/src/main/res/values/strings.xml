@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Merge Sort</string>
+    <string name="action_settings">Settings</string>
+    <string name="input_hint">لطفا آرایه را وارد کنید</string>
+    <string name="input_hint_full">آرایه مرتب نشده:\n</string>
+    <string name="unsorted_array">آرایه مرتب نشده:\n</string>
+    <string name="sorted_array">آرایه مرتب شده:\n</string>
+
+    <string name="result_text_enter_string">با کلید تایید کیبورد میتوانید عدد بعدی را وارد کنید</string>
+    <string name="log">آرایه مرتب شد</string>
+    <string name="string_acceptable">آرایه مرتب شد</string>
+    <string name="sort">مرتب کن</string>
+    <string name="emptyEditText">لطفا یک عدد وارد کنید</string>
+</resources>
