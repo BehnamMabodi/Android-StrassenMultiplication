@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Strassen Multiplication</string>
     <string name="action_settings">Settings</string>
-    <string name="input_hint">لطفا آرایه را وارد کنید</string>
+    <string name="input_hint">تعداد سطرهای ماتریس</string>
+    <string name="input_hint_vertical">تعداد ستون های ماتریس</string>
     <string name="input_hint_full">آرایه مرتب نشده:\n</string>
     <string name="unsorted_array">آرایه مرتب نشده:\n</string>
     <string name="sorted_array">آرایه مرتب شده:\n</string>

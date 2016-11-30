@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         mSortButton = (Button) findViewById(R.id.button_sort);
         mResultTextView = (TextView) findViewById(R.id.results);
         mLogTextView = (TextView) findViewById(R.id.log_textview);
-        mInputEditText = (EditText) findViewById(R.id.input);
+        mInputEditText = (EditText) findViewById(R.id.MatrixHorizontal);
         mInputEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -117,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
