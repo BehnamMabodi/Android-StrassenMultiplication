@@ -12,4 +12,5 @@
     <string name="string_acceptable">آرایه مرتب شد</string>
     <string name="sort">مرتب کن</string>
     <string name="emptyEditText">لطفا یک عدد وارد کنید</string>
+    <string name="title_activity_enter_matrix">ماتریس ها</string>
 </resources>
