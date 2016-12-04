@@ -22,23 +22,10 @@
             android:visibility="invisible"/>
 
 
-        <TextView
-            android:id="@+id/results"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:gravity="center_horizontal"
-            android:text="@string/result_text_enter_string"
-            android:textSize="24sp"/>
-
-
         <android.support.v7.widget.CardView
             android:id="@+id/input_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/results"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginRight="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin">
@@ -48,7 +35,7 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/MatrixHorizontal"
+                    android:id="@+id/MatrixRow"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/activity_vertical_margin"
@@ -59,10 +46,10 @@
                     android:inputType="number|numberDecimal"/>
 
                 <EditText
-                    android:id="@+id/MatrixVertical"
+                    android:id="@+id/MatrixColumn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:layout_marginBottom="@dimen/activity_horizontal_margin"
                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
                     android:layout_marginRight="@dimen/activity_horizontal_margin"
                     android:hint="@string/input_hint_vertical"
@@ -70,46 +57,6 @@
             </TableLayout>
         </android.support.v7.widget.CardView>
 
-        <ScrollView
-            android:id="@+id/log_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/input_layout"
-            android:background="@android:color/transparent">
 
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="@dimen/activity_vertical_margin">
-
-                <TextView
-                    android:id="@+id/log_textview"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="@dimen/activity_vertical_margin"
-                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                    android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:layout_marginTop="@dimen/activity_vertical_margin"
-                    android:text="@string/input_hint_full"/>
-
-            </android.support.v7.widget.CardView>
-        </ScrollView>
-
-        <Button
-            android:id="@+id/button_sort"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_below="@id/log_layout"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:backgroundTint="@color/colorAccent"
-            android:text="@string/sort"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"/>
     </RelativeLayout>
 </ScrollView>
