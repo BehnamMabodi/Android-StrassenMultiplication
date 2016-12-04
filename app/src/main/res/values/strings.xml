@@ -13,4 +13,7 @@
     <string name="sort">مرتب کن</string>
     <string name="emptyEditText">لطفا یک عدد وارد کنید</string>
     <string name="title_activity_enter_matrix">ماتریس ها</string>
+    <string name="matrix1_input">درایه های ماتریس اول را وارد کنید</string>
+    <string name="matrix_input">درایه های ماتریس</string>
+    <string name="matrix_output">خروجی ماتریس</string>
 </resources>
