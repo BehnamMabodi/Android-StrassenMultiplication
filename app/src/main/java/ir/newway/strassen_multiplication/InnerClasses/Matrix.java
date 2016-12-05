@@ -33,10 +33,11 @@ public class Matrix {
 
     private void increaseHead() {
         if (!isFull()) {
-            mRowHead++;
-            if (mRowHead >= mRowLimit) {
-                mRowHead = 0;
-                mColumnHead++;
+            mColumnHead++;
+            if (mColumnHead >= mColumnLimit) {
+                mRowHead++;
+                if (!isFull())
+                    mColumnHead = 0;
             }
         }
     }
@@ -57,12 +58,12 @@ public class Matrix {
         String log = "";
         for (int i = 0; i < mRowSize; i++) {
             for (int j = 0; j < mColumnSize; j++) {
-                log += mData[i][j] + "  ";
+                log += mData[i][j] + "   ";
+                // TODO: Remove Extra Chars If Two Number Inserted
             }
             log += "\n";
         }
-        log += "\n\n";
-
+        log += "\n";
         return log;
     }
 
