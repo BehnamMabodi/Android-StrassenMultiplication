@@ -16,4 +16,5 @@
     <string name="matrix1_input">درایه های ماتریس اول را وارد کنید</string>
     <string name="matrix_input">درایه های ماتریس</string>
     <string name="matrix_output">خروجی ماتریس</string>
+    <string name="matrix_full">ماتریس ها پر شده اند</string>
 </resources>
