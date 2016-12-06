@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class EnterMatrix extends AppCompatActivity {
     int mColumnLimit;
     EditText edtInput;
     TextView mTvOutputLog;
+    Button mRandomFill;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class EnterMatrix extends AppCompatActivity {
         setContentView(R.layout.activity_enter_matrix);
         mTvOutputLog = (TextView) findViewById(R.id.tv_matrix_output);
         edtInput = (EditText) findViewById(R.id.edt_matrixInput);
+        mRandomFill = (Button) findViewById(R.id.btn_random_fill);
 
         mRowLimit = getIntent().getExtras().getInt("matrix_row");
         mColumnLimit = getIntent().getExtras().getInt("matrix_column");
@@ -52,6 +55,17 @@ public class EnterMatrix extends AppCompatActivity {
                 edtInput.setText("");
             }
         });
+
+        mRandomFill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mMatrix1.randomFill(10);
+                mMatrix2.randomFill(10);
+                Snackbar.make(edtInput, getString(R.string.matrix_full), Snackbar.LENGTH_LONG).show();
+                doStrassen();
+            }
+        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -64,12 +78,13 @@ public class EnterMatrix extends AppCompatActivity {
             mTvOutputLog.setText(mMatrix1.getLog() + mMatrix2.getLog());
             if (mMatrix2.isFull())
                 doStrassen();
-        } else
+        } else {
+            Snackbar.make(edtInput, getString(R.string.matrix_full), Snackbar.LENGTH_LONG).show();
             doStrassen();
+        }
     }
 
     private void doStrassen() {
-        Snackbar.make(edtInput, getString(R.string.matrix_full), Snackbar.LENGTH_LONG).show();
         Matrix result = new Matrix(Strassen.strassen(mMatrix1.toArray(), mMatrix2.toArray()));
         mTvOutputLog.setText(mMatrix1.getLog() + mMatrix2.getLog() + result.getLog());
     }

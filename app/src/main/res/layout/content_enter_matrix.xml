@@ -51,6 +51,12 @@
                     android:hint="@string/matrix1_input"
                     android:inputType="number|numberDecimal"/>
 
+                <Button
+                    android:id="@+id/btn_random_fill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/random_fill"/>
+
             </TableLayout>
         </android.support.v7.widget.CardView>
 

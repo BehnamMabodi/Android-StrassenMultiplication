@@ -17,4 +17,5 @@
     <string name="matrix_input">درایه های ماتریس</string>
     <string name="matrix_output">خروجی ماتریس</string>
     <string name="matrix_full">ماتریس ها پر شده اند</string>
+    <string name="random_fill">تصادفی پرکن</string>
 </resources>
