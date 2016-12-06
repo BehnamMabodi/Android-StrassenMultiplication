@@ -54,9 +54,9 @@ public class Matrix {
         }
     }
 
-    public void randomFill(int maxRange){
+    public void randomFill(int maxRange) {
         Random random = new Random();
-        while (!isFull()){
+        while (!isFull()) {
             addNumber(random.nextInt(maxRange));
         }
     }
@@ -77,13 +77,21 @@ public class Matrix {
         String log = "";
         for (int i = 0; i < mRowSize; i++) {
             for (int j = 0; j < mColumnSize; j++) {
-                log += mData[i][j] + "   ";
+                log += mData[i][j] + printSpace(mData[i][j] + "");
                 // TODO: Remove Extra Chars If Two Number Inserted
             }
             log += "\n";
         }
         log += "\n";
         return log;
+    }
+
+    private String printSpace(String text) {
+        int length = text.length();
+        String space = "";
+        for (int i = 8 - (length * 2); i > 0; i--)
+            space += " ";
+        return space;
     }
 
     public int[][] toArray() {
