@@ -70,7 +70,7 @@ public class EnterMatrix extends AppCompatActivity {
 
     private void doStrassen() {
         Snackbar.make(edtInput, getString(R.string.matrix_full), Snackbar.LENGTH_LONG).show();
-        Matrix result = new Matrix(Strassen.strassen(mMatrix1.getArray(), mMatrix2.getArray()));
+        Matrix result = new Matrix(Strassen.strassen(mMatrix1.toArray(), mMatrix2.toArray()));
         mTvOutputLog.setText(mMatrix1.getLog() + mMatrix2.getLog() + result.getLog());
     }
 

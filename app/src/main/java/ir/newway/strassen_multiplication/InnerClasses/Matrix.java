@@ -54,7 +54,7 @@ public class Matrix {
         }
     }
 
-    public void fullRandom(){
+    public void fillRandom(){
         Random random = new Random(10);
         while (!isFull()){
             addNumber(random.nextInt());
@@ -86,7 +86,7 @@ public class Matrix {
         return log;
     }
 
-    public int[][] getArray() {
+    public int[][] toArray() {
         return mData;
     }
 
