@@ -56,17 +56,22 @@ public class EnterMatrix extends AppCompatActivity {
     }
 
     private void addNumber(int number) {
-        if (!mMatrix1.isFull())
+        if (!mMatrix1.isFull()) {
             mMatrix1.addNumber(number);
-        else if (!mMatrix2.isFull())
+            mTvOutputLog.setText(mMatrix1.getLog() + mMatrix2.getLog());
+        } else if (!mMatrix2.isFull()) {
             mMatrix2.addNumber(number);
-        else
-            Snackbar.make(edtInput, getString(R.string.matrix_full), Snackbar.LENGTH_LONG).show();
-        mTvOutputLog.setText(mMatrix1.getLog() + mMatrix2.getLog());
+            mTvOutputLog.setText(mMatrix1.getLog() + mMatrix2.getLog());
+            if (mMatrix2.isFull())
+                doStrassen();
+        } else
+            doStrassen();
     }
 
-    private void addZeroes() {
-
+    private void doStrassen() {
+        Snackbar.make(edtInput, getString(R.string.matrix_full), Snackbar.LENGTH_LONG).show();
+        Matrix result = new Matrix(Strassen.strassen(mMatrix1.getArray(), mMatrix2.getArray()));
+        mTvOutputLog.setText(mMatrix1.getLog() + mMatrix2.getLog() + result.getLog());
     }
 
     private int roundToNextPow2(int number) {
