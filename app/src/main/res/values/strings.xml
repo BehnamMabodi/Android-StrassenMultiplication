@@ -18,4 +18,5 @@
     <string name="matrix_output">خروجی ماتریس</string>
     <string name="matrix_full">ماتریس ها پر شده اند</string>
     <string name="random_fill">تصادفی پرکن</string>
+    <string name="wait">لطفا صبر کنید</string>
 </resources>

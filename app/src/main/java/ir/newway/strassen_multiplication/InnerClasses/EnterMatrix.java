@@ -1,5 +1,7 @@
 package ir.newway.strassen_multiplication.InnerClasses;
 
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -17,11 +19,13 @@ public class EnterMatrix extends AppCompatActivity {
 
     Matrix mMatrix1;
     Matrix mMatrix2;
+    Matrix mResult;
     int mRowLimit;
     int mColumnLimit;
     EditText edtInput;
     TextView mTvOutputLog;
     Button mRandomFill;
+    AsyncTask mBackgroundTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,14 +83,38 @@ public class EnterMatrix extends AppCompatActivity {
             if (mMatrix2.isFull())
                 doStrassen();
         } else {
-            Snackbar.make(edtInput, getString(R.string.matrix_full), Snackbar.LENGTH_LONG).show();
+
             doStrassen();
         }
     }
 
     private void doStrassen() {
-        Matrix result = new Matrix(Strassen.strassen(mMatrix1.toArray(), mMatrix2.toArray()));
-        mTvOutputLog.setText(mMatrix1.getLog() + mMatrix2.getLog() + result.getLog());
+        final ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setTitle(R.string.wait);
+        dialog.setCancelable(false);
+        dialog.show();
+        mBackgroundTask = new AsyncTask() { // This is not the best idea (MAY CAUSE MEMORY LEAK) but we don't care now! because it's just a practice app and this is quickest way to implement (and also dirty)
+            @Override
+            protected Object doInBackground(Object[] objects) {
+                mResult = new Matrix(Strassen.strassen(mMatrix1.toArray(), mMatrix2.toArray()));
+                return null;
+            }
+
+            @Override
+            protected void onPostExecute(Object o) {
+                mTvOutputLog.setText(mMatrix1.getLog() + mMatrix2.getLog() + mResult.getLog());
+                dialog.dismiss();
+            }
+        };
+        mBackgroundTask.execute();
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mBackgroundTask != null)
+            mBackgroundTask.cancel(true);
+        super.onDestroy();
     }
 
     private int roundToNextPow2(int number) {
