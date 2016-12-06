@@ -54,8 +54,8 @@ public class Matrix {
         }
     }
 
-    public void fillRandom(){
-        Random random = new Random(10);
+    public void randomFill(int maxRange){
+        Random random = new Random(maxRange);
         while (!isFull()){
             addNumber(random.nextInt());
         }
