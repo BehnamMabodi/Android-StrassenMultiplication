@@ -1,5 +1,7 @@
 package ir.newway.strassen_multiplication.InnerClasses;
 
+import java.util.Random;
+
 /**
  * Created by goldm on 05/12/2016.
  */
@@ -23,6 +25,16 @@ public class Matrix {
         mRowSize = rowSize;
     }
 
+    public Matrix(int[][] data) {
+        mData = data;
+        mRowLimit = data[0].length;
+        mColumnLimit = data[1].length;
+        mRowSize = data[0].length;
+        mColumnSize = data[1].length;
+        mRowHead = mRowLimit;
+        mColumnHead = mColumnLimit;
+    }
+
     public void addNumber(int number) {
         if (!isFull()) {
             mData[mRowHead][mColumnHead] = number;
@@ -39,6 +51,13 @@ public class Matrix {
                 if (!isFull())
                     mColumnHead = 0;
             }
+        }
+    }
+
+    public void fullRandom(){
+        Random random = new Random(10);
+        while (!isFull()){
+            addNumber(random.nextInt());
         }
     }
 
