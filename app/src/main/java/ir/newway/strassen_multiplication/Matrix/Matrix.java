@@ -3,7 +3,7 @@ package ir.newway.strassen_multiplication.Matrix;
 import java.util.Random;
 
 /**
- * Created by goldm on 05/12/2016.
+ * Created by BehnamMabodi on 05/12/2016.
  */
 
 public class Matrix {
