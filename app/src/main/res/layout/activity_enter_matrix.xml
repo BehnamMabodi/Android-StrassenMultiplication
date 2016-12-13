@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="ir.newway.strassen_multiplication.InnerClasses.EnterMatrix">
+    tools:context="ir.newway.strassen_multiplication.Matrix.EnterMatrixActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

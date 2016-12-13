@@ -14,7 +14,7 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import ir.newway.strassen_multiplication.InnerClasses.EnterMatrix;
+import ir.newway.strassen_multiplication.Matrix.EnterMatrixActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     protected void showResults() {
-        Intent intent = new Intent(MainActivity.this, EnterMatrix.class);
+        Intent intent = new Intent(MainActivity.this, EnterMatrixActivity.class);
         intent.putExtra("matrix_row", Integer.parseInt(mInputEditText_MatrixRow.getText().toString()));
         intent.putExtra("matrix_column", Integer.parseInt(mInputEditText_MatrixColumn.getText().toString()));
         startActivity(intent);

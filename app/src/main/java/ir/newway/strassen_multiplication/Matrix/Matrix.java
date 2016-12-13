@@ -1,4 +1,4 @@
-package ir.newway.strassen_multiplication.InnerClasses;
+package ir.newway.strassen_multiplication.Matrix;
 
 import java.util.Random;
 

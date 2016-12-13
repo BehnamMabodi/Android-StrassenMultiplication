@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".InnerClasses.EnterMatrix"
+            android:name=".Matrix.EnterMatrixActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:label="@string/title_activity_enter_matrix"
             android:parentActivityName=".MainActivity"

@@ -1,4 +1,4 @@
-package ir.newway.strassen_multiplication.InnerClasses;
+package ir.newway.strassen_multiplication.Matrix;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import ir.newway.strassen_multiplication.R;
 
-public class EnterMatrix extends AppCompatActivity {
+public class EnterMatrixActivity extends AppCompatActivity {
 
     Matrix mMatrix1;
     Matrix mMatrix2;
