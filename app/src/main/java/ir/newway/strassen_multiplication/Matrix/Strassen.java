@@ -3,7 +3,7 @@ package ir.newway.strassen_multiplication.Matrix;
 import java.util.Random;
 
 /**
- * Created by goldm on 30/11/2016.
+ * Created by BehnamMabodi on 30/11/2016.
  */
 
 public class Strassen {
@@ -153,24 +153,4 @@ public class Strassen {
         }
         System.out.println();
     }
-/*
-
-    public static void main(String[] args) {
-        Random r = new Random(10000);
-        Random r1 = new Random(1000);
-        int[][] arr = new int[32][32];
-        int i, j;
-        for (i = 0; i < 32; i++) {
-            for (j = 0; j < 32; j++) {
-                a[i][j] = r.nextInt(10000);
-                b[i][j] = r1.nextInt(1000);
-            }
-        }
-        arr = strassen(a, b);
-        print(arr);
-        multiply(a, b);
-
-    }
-*/
-
 }
